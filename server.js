@@ -2,6 +2,9 @@ const http = require('http')
 const fs = require('fs')
 const utils = require('./utils.js')
 
+
+
+
 const server = http.createServer((req, res) => {
     if (req.url === '/') {
         const htmlFile = fs.readFileSync('./client/index.html')
