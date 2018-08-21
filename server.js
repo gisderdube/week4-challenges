@@ -15,6 +15,10 @@ const server = http.createServer((req, res) => {
         const jsFile = fs.readFileSync('./client/index.js')
         res.write(jsFile)
         res.end()
+    } else if (req.url === '/about') {
+        const jsFile = fs.readFileSync('./client/about.html')
+        res.write(jsFile)
+        res.end()
     } else {
         res.statusCode = 404
         res.write('We could not find what you are looking for')
