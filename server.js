@@ -1,5 +1,7 @@
 const http = require('http')
 const fs = require('fs')
+const utils = require('./utils.js')
+const { createRandomWord } = require("./utils")
 
 const server = http.createServer((req, res) => {
     if (req.url === '/') {
@@ -14,6 +16,17 @@ const server = http.createServer((req, res) => {
     } else if (req.url === '/index.js') {
         const jsFile = fs.readFileSync('./client/index.js')
         res.write(jsFile)
+        res.end()
+    }
+    else if (req.url === '/about') {
+        const htmlFile = fs.readFileSync('./client/about.html')
+        res.write(htmlFile)
+        res.end()
+    }
+    else if (req.url === '/randomWord') {
+        let randomWord = utils.createRandomWord();
+        console.log("server", randomWord)
+        res.write(randomWord)
         res.end()
     } else {
         res.statusCode = 404
