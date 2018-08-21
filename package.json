@@ -8,6 +8,9 @@
     },
     "author": "",
     "license": "ISC",
-    "dependencies": {},
+    "dependencies": {
+        "axios": "^0.18.0",
+        "rword": "^2.2.0"
+    },
     "devDependencies": {}
 }
